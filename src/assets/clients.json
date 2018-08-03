@@ -1,0 +1,13 @@
+{
+    "Id": 1,
+    "lastName": "Черемисина",
+    "firstName": "Лариса",
+    "secondName": "Николаевна",
+    "gender": "женский",
+    "yearBirth" : "02/07/1998 12:15:22",
+    "riskGroup": "Вторая",
+    "pasportNumber" : 123456,
+    "city": "Воронеж",
+    "country": "Россия",
+    "email": "laracher98@mail.ru"
+}

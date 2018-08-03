@@ -1,0 +1,53 @@
+<h1>Список пользователей</h1>
+<input type="button" value="Добавить" class="btn btn-success" (click)="addClient()" routerLink ="/add" />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Фамилия</td>
+            <td>Имя</td>
+            <td>Отчество</td>
+            <td>Пол</td>
+            <td>Дата рождения</td>
+            <td>Группа риска</td>
+            <td>Номер паспорта</td>
+            <td>Город</td>
+            <td>Страна</td>
+            <td>Электронная почта</td>
+            <td></td>
+            <td></td>
+        </tr>  
+    </thead>
+    <tbody>
+        <tr *ngFor = "let client of clients">
+            <ng-template [ngTemplateOutlet]="loadTemplate(client)"
+                        [ngTemplateOutletContext]="{ $implicit: client }">
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<div>{{StatusMessage}}</div>
+
+<!-- шаблон для чтения -->
+
+  <td>{{client.Id}}</td>
+  <td>{{client.lastName}}</td>
+  <td>{{client.firstName}}</td>
+  <td>{{client.secondName}}</td>
+  <td>{{client.gender}}</td>
+  <td>{{client.yearBirth}}</td>
+  <td>{{client.riskGroup}}</td>
+  <td>{{client.pasportNumber}}</td>
+  <td>{{client.city}}</td>
+  <td>{{client.country}}</td>
+  <td>{{client.email}}</td>
+  <td>
+      <input type="button" value="Изменить" class="btn btn-default" (click)="editClient(client)" />
+  </td>
+  <td>
+      <input type="button" value="Удалить" (click)="deleteClient(client)" class="btn btn-danger"  />
+  </td>
+
+
+
+
